@@ -1,0 +1,12 @@
+.directory
+.fuse_hidden*
+.Trash-*
+.*.kate-swp
+.swp.*
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
