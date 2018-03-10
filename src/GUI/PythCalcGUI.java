@@ -111,29 +111,10 @@ public class PythCalcGUI extends javax.swing.JFrame {
 
     private void calcHypoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcHypoActionPerformed
         load.setText ("Loading...");
-        String input, inputTwo;
-        double Dinput = 1.0; 
-        double DinputTwo = 1.0; 
-        double total, result;
-        input = entryOne.getText();
-        try {
-            Dinput = Double.parseDouble(input);
-        } catch (Exception e) {
-            sideLength.setText ("ERROR");
-            load.setText ("");
-            return;
-        }
-        inputTwo = entryTwo.getText();
-        try {
-            DinputTwo = Double.parseDouble(inputTwo);
-        } catch (Exception e) {
-            sideLength.setText ("ERROR");
-            load.setText ("");
-            return;
-        }
+        double total, result, Dinput, DinputTwo;
+        Dinput = test(entryOne.getText());
+        DinputTwo = test(entryTwo.getText());
         if (Dinput <= 0 || DinputTwo <= 0) {
-            sideLength.setText ("ERROR");
-            load.setText ("");
             return;
         }
         total = (Dinput * Dinput) + (DinputTwo * DinputTwo);
@@ -144,29 +125,10 @@ public class PythCalcGUI extends javax.swing.JFrame {
 
     private void calcLegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcLegActionPerformed
         load.setText ("Loading...");
-        String input, inputTwo;
-        double Dinput = 1.0; 
-        double DinputTwo = 1.0; 
-        double total, result;
-        input = entryOne.getText();
-        try {
-            Dinput = Double.parseDouble(input);
-        } catch (Exception e) {
-            sideLength.setText ("ERROR");
-            load.setText ("");
-            return;
-        }
-        inputTwo = entryTwo.getText();
-        try {
-            DinputTwo = Double.parseDouble(inputTwo);
-        } catch (Exception e) {
-            sideLength.setText ("ERROR");
-            load.setText ("");
-            return;
-        }
+        double total, result, Dinput, DinputTwo;
+        Dinput = test(entryOne.getText());
+        DinputTwo = test(entryTwo.getText());
         if (Dinput <= 0 || DinputTwo <= 0) {
-            sideLength.setText ("ERROR");
-            load.setText ("");
             return;
         }
         if (DinputTwo >= Dinput) {
@@ -181,29 +143,10 @@ public class PythCalcGUI extends javax.swing.JFrame {
 
     private void calcAHypoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcAHypoActionPerformed
         load.setText ("Loading...");
-        String input, inputTwo;
-        double Dinput = 1.0; 
-        double DinputTwo = 1.0; 
-        double total;
-        input = entryOne.getText();
-        try {
-            Dinput = Double.parseDouble(input);
-        } catch (Exception e) {
-            sideLength.setText ("ERROR");
-            load.setText ("");
-            return;
-        }
-        inputTwo = entryTwo.getText();
-        try {
-            DinputTwo = Double.parseDouble(inputTwo);
-        } catch (Exception e) {
-            sideLength.setText ("ERROR");
-            load.setText ("");
-            return;
-        }
+        double total, Dinput, DinputTwo;
+        Dinput = test(entryOne.getText());
+        DinputTwo = test(entryTwo.getText());
         if (Dinput <= 0 || DinputTwo <= 0) {
-            sideLength.setText ("ERROR");
-            load.setText ("");
             return;
         }
         total = (Dinput * Dinput) + (DinputTwo * DinputTwo);
@@ -213,29 +156,10 @@ public class PythCalcGUI extends javax.swing.JFrame {
 
     private void calcALegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcALegActionPerformed
         load.setText ("Loading...");
-        String input, inputTwo;
-        double Dinput = 1.0; 
-        double DinputTwo = 1.0; 
-        double total;
-        input = entryOne.getText();
-        try {
-            Dinput = Double.parseDouble(input);
-        } catch (Exception e) {
-            sideLength.setText ("ERROR");
-            load.setText ("");
-            return;
-        }
-        inputTwo = entryTwo.getText();
-        try {
-            DinputTwo = Double.parseDouble(inputTwo);
-        } catch (Exception e) {
-            sideLength.setText ("ERROR");
-            load.setText ("");
-            return;
-        }
+        double total, Dinput, DinputTwo;
+        Dinput = test(entryOne.getText());
+        DinputTwo = test(entryTwo.getText());
         if (Dinput <= 0 || DinputTwo <= 0) {
-            sideLength.setText ("ERROR");
-            load.setText ("");
             return;
         }
         if (DinputTwo >= Dinput) {
@@ -247,6 +171,19 @@ public class PythCalcGUI extends javax.swing.JFrame {
         load.setText ("");
     }//GEN-LAST:event_calcALegActionPerformed
 
+    public double test (String input) {
+        double Dinput;
+        try {
+            Dinput = Double.parseDouble(input);
+        } catch (Exception e) {
+            Dinput = -1.0;
+        }
+        if (Dinput <= 0 || Dinput <= 0) {
+            sideLength.setText ("ERROR");
+            load.setText ("");
+        }
+        return Dinput;
+    }
 
     /**
      * @param args the command line arguments
