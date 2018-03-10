@@ -37,12 +37,6 @@ public class PythCalcGUI extends javax.swing.JFrame {
         sideLength.setText("Side length");
         sideLength.setToolTipText("");
 
-        entryOne.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entryOneActionPerformed(evt);
-            }
-        });
-
         calcLeg.setText("Calculate Leg");
         calcLeg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,10 +108,6 @@ public class PythCalcGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void entryOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entryOneActionPerformed
-        
-    }//GEN-LAST:event_entryOneActionPerformed
 
     private void calcHypoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcHypoActionPerformed
         load.setText ("Loading...");
