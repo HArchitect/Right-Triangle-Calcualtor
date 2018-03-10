@@ -2,7 +2,7 @@ This program is used to calculate the side lengths of
 right traingles.
 
 Click calcualte leg if the leg is the missing side.
-Click calcultae hypotenuse if the hypotenuse is the
+Click calculate hypotenuse if the hypotenuse is the
 missing side. Click the calculate actual version
 to get the answer as a square root. This is helpful
 if the answer is irrational. You will see the answer in
