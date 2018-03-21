@@ -1,3 +1,5 @@
+## Right Triangle Calculator
+
 This program is used to calculate the side lengths of
 right traingles.
 
