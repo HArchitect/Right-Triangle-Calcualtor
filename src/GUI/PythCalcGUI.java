@@ -22,46 +22,46 @@ public class PythCalcGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Answer = new javax.swing.ButtonGroup();
+        Side = new javax.swing.ButtonGroup();
         sideLength = new javax.swing.JLabel();
         entryOne = new javax.swing.JTextField();
         entryTwo = new javax.swing.JTextField();
-        calcLeg = new javax.swing.JButton();
-        calcHypo = new javax.swing.JButton();
-        load = new javax.swing.JLabel();
-        calcAHypo = new javax.swing.JButton();
-        calcALeg = new javax.swing.JButton();
+        Leg = new javax.swing.JRadioButton();
+        Hypotenuse = new javax.swing.JRadioButton();
+        Actual = new javax.swing.JRadioButton();
+        Rounded = new javax.swing.JRadioButton();
+        AnswerLabel = new javax.swing.JLabel();
+        SideLabel = new javax.swing.JLabel();
+        Calculate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pyth Calc");
 
-        sideLength.setText("Side length");
+        sideLength.setText("Side Length");
         sideLength.setToolTipText("");
 
-        calcLeg.setText("Calculate Leg");
-        calcLeg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calcLegActionPerformed(evt);
-            }
-        });
+        Side.add(Leg);
+        Leg.setText("Leg");
+        Leg.setToolTipText("");
 
-        calcHypo.setText("Calculate Hypotenuse");
-        calcHypo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calcHypoActionPerformed(evt);
-            }
-        });
+        Side.add(Hypotenuse);
+        Hypotenuse.setText("Hypotenuse");
 
-        calcAHypo.setText("Calculate Actual Hypotenuse");
-        calcAHypo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calcAHypoActionPerformed(evt);
-            }
-        });
+        Answer.add(Actual);
+        Actual.setText("Actual");
 
-        calcALeg.setText("Calculate Actual Leg");
-        calcALeg.addActionListener(new java.awt.event.ActionListener() {
+        Answer.add(Rounded);
+        Rounded.setText("Rounded");
+
+        AnswerLabel.setText("Form of answer:");
+
+        SideLabel.setText("Missing side:");
+
+        Calculate.setText("Calculate");
+        Calculate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calcALegActionPerformed(evt);
+                CalculateActionPerformed(evt);
             }
         });
 
@@ -69,120 +69,114 @@ public class PythCalcGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(load, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(entryOne)
-                    .addComponent(calcLeg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(calcALeg, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(calcAHypo, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(calcHypo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(entryTwo, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(sideLength, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(entryOne, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Leg)
+                            .addComponent(Hypotenuse)
+                            .addComponent(SideLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Rounded)
+                            .addComponent(AnswerLabel)
+                            .addComponent(entryTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Actual))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Calculate)
+                            .addComponent(sideLength, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(load, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sideLength, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(9, 9, 9)
+                .addComponent(sideLength)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(entryOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(entryTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AnswerLabel)
+                    .addComponent(SideLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(calcLeg)
-                    .addComponent(calcHypo))
+                    .addComponent(Actual)
+                    .addComponent(Leg))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(calcAHypo)
-                    .addComponent(calcALeg))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Rounded)
+                    .addComponent(Hypotenuse))
+                .addGap(18, 18, 18)
+                .addComponent(Calculate)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
+
+        AnswerLabel.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void calcHypoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcHypoActionPerformed
-        load.setText ("Loading...");
-        double total, result, Dinput, DinputTwo;
-        Dinput = test(entryOne.getText());
-        DinputTwo = test(entryTwo.getText());
-        if (Dinput <= 0 || DinputTwo <= 0) {
+    private void CalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculateActionPerformed
+        double numOne = testInput(entryOne.getText());
+        double numTwo = testInput(entryTwo.getText());
+        if (numOne <= 0 || numTwo <= 0) {
             return;
         }
-        total = (Dinput * Dinput) + (DinputTwo * DinputTwo);
-        result = Math.sqrt(total);
-        sideLength.setText ("Side length: "+Double.toString(result));
-        load.setText ("");
-    }//GEN-LAST:event_calcHypoActionPerformed
-
-    private void calcLegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcLegActionPerformed
-        load.setText ("Loading...");
-        double total, result, Dinput, DinputTwo;
-        Dinput = test(entryOne.getText());
-        DinputTwo = test(entryTwo.getText());
-        if (Dinput <= 0 || DinputTwo <= 0) {
-            return;
+        if (Leg.isSelected()) {
+            legCalc (numOne, numTwo);
+        } else if (Hypotenuse.isSelected()) {
+            hypoCalc (numOne, numTwo);
         }
-        if (DinputTwo >= Dinput) {
-            total = (DinputTwo * DinputTwo) - (Dinput * Dinput);
-        } else {
-            total = (Dinput * Dinput) - (DinputTwo * DinputTwo);
-        }  
-        result = Math.sqrt(total);
-        sideLength.setText ("Side length: "+Double.toString(result));
-        load.setText ("");
-    }//GEN-LAST:event_calcLegActionPerformed
+    }//GEN-LAST:event_CalculateActionPerformed
 
-    private void calcAHypoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcAHypoActionPerformed
-        load.setText ("Loading...");
-        double total, Dinput, DinputTwo;
-        Dinput = test(entryOne.getText());
-        DinputTwo = test(entryTwo.getText());
-        if (Dinput <= 0 || DinputTwo <= 0) {
-            return;
-        }
-        total = (Dinput * Dinput) + (DinputTwo * DinputTwo);
-        sideLength.setText ("Side length: sqrt("+Double.toString(total)+")");
-        load.setText ("");
-    }//GEN-LAST:event_calcAHypoActionPerformed
-
-    private void calcALegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcALegActionPerformed
-        load.setText ("Loading...");
-        double total, Dinput, DinputTwo;
-        Dinput = test(entryOne.getText());
-        DinputTwo = test(entryTwo.getText());
-        if (Dinput <= 0 || DinputTwo <= 0) {
-            return;
-        }
-        if (DinputTwo >= Dinput) {
-            total = (DinputTwo * DinputTwo) - (Dinput * Dinput);
-        } else {
-            total = (Dinput * Dinput) - (DinputTwo * DinputTwo);
-        }  
-        sideLength.setText ("Side length: sqrt("+Double.toString(total)+")");
-        load.setText ("");
-    }//GEN-LAST:event_calcALegActionPerformed
-
-    public double test (String input) {
+    public double testInput (String input) {
         double Dinput;
         try {
             Dinput = Double.parseDouble(input);
         } catch (Exception e) {
             Dinput = -1.0;
         }
-        if (Dinput <= 0 || Dinput <= 0) {
+        if (Dinput <= 0) {
             sideLength.setText ("ERROR");
-            load.setText ("");
         }
         return Dinput;
+    }
+    
+    public void printTotal (double total) {
+        if (Actual.isSelected()) {
+            sideLength.setText("Side length: Square Root of ("+Double.toString(total)+")");
+        } else if (Rounded.isSelected()) {
+            total = Math.sqrt(total);
+            sideLength.setText("Side length: "+Double.toString(total));
+        }
+    }
+    
+    public void legCalc (double numOne, double numTwo) {
+        double sqOne = numOne * numOne;
+        double sqTwo = numTwo * numTwo;
+        double total;
+        if (sqOne < sqTwo) {
+            total = sqTwo - sqOne;
+        } else if (sqTwo < sqOne) {
+            total = sqOne - sqTwo;
+        } else {
+            sideLength.setText("ERROR");
+            return;
+        }
+        printTotal (total);
+    }
+    
+    public void hypoCalc (double numOne, double numTwo) {
+        double sqOne = numOne * numOne;
+        double sqTwo = numTwo * numTwo;
+        double total = sqOne + sqTwo;
+        printTotal (total);
     }
 
     /**
@@ -216,13 +210,17 @@ public class PythCalcGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton calcAHypo;
-    private javax.swing.JButton calcALeg;
-    private javax.swing.JButton calcHypo;
-    private javax.swing.JButton calcLeg;
+    private javax.swing.JRadioButton Actual;
+    private javax.swing.ButtonGroup Answer;
+    private javax.swing.JLabel AnswerLabel;
+    private javax.swing.JButton Calculate;
+    private javax.swing.JRadioButton Hypotenuse;
+    private javax.swing.JRadioButton Leg;
+    private javax.swing.JRadioButton Rounded;
+    private javax.swing.ButtonGroup Side;
+    private javax.swing.JLabel SideLabel;
     private javax.swing.JTextField entryOne;
     private javax.swing.JTextField entryTwo;
-    private javax.swing.JLabel load;
     private javax.swing.JLabel sideLength;
     // End of variables declaration//GEN-END:variables
 }
